@@ -17,25 +17,24 @@
                   </div>
             </nav>
             <div class="container">
-            {% for post in posts %}
                   <div class="row">
-                        <div class="col s12 m4">
-                              <div class="card z-depth-2 medium">
+                  {% for post in posts %}
+                        <div class="col s12 m6">
+                              <div class="card large z-depth-2">
                                     <div class="card-image">
-                                          <img src="{% static 'img/sample.jpg'%}" alt="">
+                                          <img src="{% static 'img/sample.jpg'%}">
+                                          <span class="card-title">{{post.title}}</span>
                                     </div>
                                     <div class="card-content">
-                                          <span class="card-title activator grey-text text-darken-4">{{post.title}}</span>
-                                          <p><a href="#">This is a link</a></p>
+                                          <p>{{post.text}}</p>
                                     </div>
-
+                                    <div class="card-action">
+                                          <a href="#" class="indigo-text text-accent-2 ">Leer más</a>
+                                    </div>
                               </div>
                         </div>
-                        <!-- <p>publicado: {{ post.published_date }}</p>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>{{ post.text|linebreaks }}</p> -->
+                  {% endfor %}
                   </div>
-            {% endfor %}
             </div>
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
