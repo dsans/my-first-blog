@@ -1,42 +1,24 @@
-{% load staticfiles %}
-<html>
-        <head>
-            <title>Django Girls blog</title>
-             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-             <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
-             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+{% extends 'blog/base.html'%}
 
-        </head>
-        <body>
-            <nav class="indigo">
-                  <div class="nav-wrapper">
-                        <a href="#" class="brand-logo">Deivid Blog</a>
-                        <ul class="right hide-on-med-and-down">
-                              <li><a href="#"><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                        </ul>
-                  </div>
-            </nav>
-            <div class="container">
-                  <div class="row">
-                  {% for post in posts %}
-                        <div class="col s12 m6">
-                              <div class="card large z-depth-2">
-                                    <div class="card-image">
-                                          <img src="{% static 'img/sample.jpg'%}">
-                                          <span class="card-title">{{post.title}}</span>
-                                    </div>
-                                    <div class="card-content">
-                                          <p>{{post.text}}</p>
-                                    </div>
-                                    <div class="card-action">
-                                          <a href="#" class="indigo-text text-accent-2 ">Leer más</a>
-                                    </div>
+{% block content %}
+      <div class="container">
+            <div class="row">
+            {% for post in posts %}
+                  <div class="col s12 m6">
+                        <div class="card large z-depth-2">
+                              <div class="card-image">
+                                    <img src="http://materializecss.com/images/sample-1.jpg">
+                                    <span class="card-title">{{post.title}}</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>{{post.text}}</p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="#" class="indigo-text text-accent-2 ">Leer más</a>
                               </div>
                         </div>
-                  {% endfor %}
                   </div>
+            {% endfor %}
             </div>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-        </body>
-</html>
+      </div>
+{% endblock %}
