@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+	
+	{% if form.errors %}
+		<p>Los datos introducidos no son correctos</p>
+	{% endif %}
+	<div class="container">
+	<form action="{% url 'django.contrib.auth.views.login' %}" method="post">{% csrf_token %}
+		<div class="input-field">
+			{{form.username.label_tag}}
+			{{form.username}}
+		</div>
+		<div class="input-field">
+			{{form.password.label_tag}}
+			{{form.password}}
+		</div>
+		<button class="btn waves-light waves-effect" type="submit">Login</button>
+		<input type="hidden" name="next" value="{{ next }}" />
+
+	</form>
+	</div>
+
+{% endblock content %}
