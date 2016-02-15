@@ -1,50 +1,48 @@
 {% load staticfiles %}
 <html>
         <head>
+
             <title>Django Girls blog</title>
-             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-             <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
-             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
         </head>
-        <body>
+        <body class="grey lighten-5">
             <nav class="indigo">
                   <div class="nav-wrapper">
-                        <a href="#" class="brand-logo">Deivid Blog</a>
+                        <a href="/" class="brand-logo">Deivid Blog</a>
                         <ul class="right hide-on-med-and-down">
-                              <li><a href="#"><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                              <li><a href="{% url 'blog.views.post_new' %}"><i class="material-icons right">create</i></a></li>
                         </ul>
                   </div>
             </nav>
+            <main>
             {% block content %}
 
             {% endblock %}
-
+            </main>
             <footer class="page-footer indigo">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">Desarrollado por David Sans.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2016 Todos los derechos reservados
-            <a class="grey-text text-lighten-4 right" href="#!">Más Links</a>
-            </div>
-          </div>
-        </footer>
+                  <div class="container">
+                        <div class="row">
+                              <div class="col l6 s12">
+                                    <p class="grey-text text-lighten-4">Desarrollado por David Sans.</p>
+                              </div>
+                              
+                        </div>
+                  </div>
+                  <div class="footer-copyright">
+                        <div class="container">
+                              © 2016 Todos los derechos reservados
+            
+                        </div>
+                  </div>
+            </footer>
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+            {% block js %}
+              
+            {% endblock js %}
         </body>
 </html>

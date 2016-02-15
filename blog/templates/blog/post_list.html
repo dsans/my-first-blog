@@ -5,16 +5,17 @@
             <div class="row">
             {% for post in posts %}
                   <div class="col s12 m6">
-                        <div class="card large z-depth-2">
+                        <div class="card small z-depth-2">
                               <div class="card-image">
                                     <img src="http://materializecss.com/images/sample-1.jpg">
                                     <span class="card-title">{{post.title}}</span>
                               </div>
                               <div class="card-content">
-                                    <p>{{post.text}}</p>
+                                    
+                                    <p class="truncate">{{post.text}}</p>
                               </div>
                               <div class="card-action">
-                                    <a href="#" class="indigo-text text-accent-2 ">Leer más</a>
+                                    <a href="{% url 'blog.views.post_detail' pk=post.pk %}" class="indigo-text text-accent-2 ">Leer más</a>
                               </div>
                         </div>
                   </div>

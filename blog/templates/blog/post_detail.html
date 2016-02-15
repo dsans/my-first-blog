@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+	
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h3>{{post.title}}</h3><p class="right">Escrito por: {{post.author}}</p>
+				<p class="flow-text">{{post.text}}</p>
+				<a href="{% url 'post_edit' pk=post.pk %}" class="btn-floating btn-large red waves-light waves-effect"><i class="material-icons ">create</i></a>
+				<a href="{% url 'post_delete' pk=post.pk %}" class="right btn-floating btn-large red waves-light waves-effect"><i class="material-icons">delete</i></a>
+
+			</div>
+		</div>
+	</div>
+				
+	
+
+
+{% endblock content %}
+{# http://materializecss.com/images/sample-1.jpg #}
