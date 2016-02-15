@@ -25,7 +25,7 @@ SECRET_KEY = '+#9gt6*0in^h3uk!itv=524_5gri=w686lzwunpdblyzx20=!r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["dsans.pythonanywhere.com"]
+ALLOWED_HOSTS = ["dsans.pythonanywhere.com","localhost"]
 
 
 # Application definition
@@ -100,5 +100,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://dsans.pythonanywhere.com/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
